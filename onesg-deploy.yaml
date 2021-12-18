@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: onesg-deployment
+  labels:
+    app: onesg
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: onesg
+  template:
+    metadata:
+      labels:
+        app: onesg
+    spec:
+      containers:
+      - name: onesg
+        image: asia-southeast1-docker.pkg.dev/onesg-111999/onesg/python
+        ports:
+        - containerPort: 8888
