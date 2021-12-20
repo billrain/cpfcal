@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Welcome to the Unoffcial but Famous CPF Calculator</h1>
+    <form action="/result" method="post">
+    Enter your nickname: <br>
+      <input autocomplete="off" autofocus name="name" placeholder="Bill Lee" type="text" value="Bill Gates">
+      <br>
+    Your monthly salary $SGD: <br>
+      <input name="salary"  type="number">
+      <br>
+    Your age: <br>
+      <input name="age"  type="age">
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+
+{% endblock %}
