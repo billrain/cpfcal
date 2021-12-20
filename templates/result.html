@@ -4,13 +4,14 @@
   <head>
     <title>Unoffcial CPF Calulator Result</title>
     <body>
-      Hello {{ name }}, your monthly salary is $ {{ salary }} and your age is {{ age }}. <br>
-      Your monthly CPF contribution by Employer is $ {{ cpf_emp }} . <br>
-      Your monthly CPF contribution by yourself is $ {{cpf_self}} . <br>
-      Your total monthly CPF contribution is $ {{cpf_tot}} . <br>
-      Your monthly CPF OA is $ {{ cpf_oa }} . <br>
-      Your monthly CPF SA is $ {{ cpf_sa }} . <br>
-      Your monthly CPF MA is $ {{ cpf_ma }} . <br>
+      Hello {{ name }}, based on your monthly salary $ {{ salary }} (capped at $6000) and age {{ age }}: <br>
+      Your monthly CPF contribution by Employer is $ {{ emp }} . <br>
+      Your monthly CPF contribution by Yourself is $ {{ eme }} . <br>
+      Your total monthly CPF contribution is $ {{ tot }} . <br>
+      Here is your CPF contribution monthly breakdown: <br>
+      CPF OA is $ {{ oa }} . <br>
+      CPF SA is $ {{ sa }} . <br>
+      CPF MA is $ {{ ma }} . <br>
     </body>
   </head>
 </html>

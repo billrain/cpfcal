@@ -45,27 +45,27 @@ def cpfcal():
         cpf_oa  = salary * 0.15
         cpf_sa  = salary * 0.115
         cpf_ma  = salary * 0.105
-        r_emp   = 0.13
-        r_self  = 0.13
 
     elif age <= 60:
         cpf_oa  = salary * 0.12
         cpf_sa  = salary * 0.035
         cpf_ma  = salary * 0.105
-        r_emp   = 0.09
-        r_self  = 0.075
+        r_emp   = 0.13
+        r_self  = 0.13
 
     elif age <= 66:
         cpf_oa  = salary * 0.035
         cpf_sa  = salary * 0.025
         cpf_ma  = salary * 0.105
-        r_emp   = 0.075
-        r_self  = 0.05        
+        r_emp   = 0.09
+        r_self  = 0.075
 
     elif age <= 99:
-        cpf_oa  = salary * 0.001
-        cpf_sa  = salary * 0.001
+        cpf_oa  = salary * 0.01
+        cpf_sa  = salary * 0.01
         cpf_ma  = salary * 0.105
+        r_emp   = 0.075
+        r_self  = 0.05
 
     else:
         return render_template("error.html", message="Invalid age")
@@ -74,5 +74,11 @@ def cpfcal():
     cpf_self = salary * r_self
     cpf_tot  = cpf_emp + cpf_self
 
-    return render_template("result.html", name=name, salary=salary, age=age, cpf_emp=cpf_emp,
-        cpf_self=cpf_self, cpf_tot=cpf_tot, cpf_oa=cpf_oa, cpf_ma=cpf_ma, cpf_sa=cpf_sa)
+    emp = ("{:.2f}".format(cpf_emp))
+    eme = ("{:.2f}".format(cpf_self))
+    tot = ("{:.2f}".format(cpf_tot))
+    oa = ("{:.2f}".format(cpf_oa))
+    sa = ("{:.2f}".format(cpf_sa))
+    ma = ("{:.2f}".format(cpf_ma))
+
+    return render_template("result.html", name=name, salary=salary, age=age, emp=emp, eme=eme, tot=tot, oa=oa, ma=ma, sa=sa)
