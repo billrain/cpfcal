@@ -3,15 +3,17 @@
 <html lang="en">
   <head>
     <title>Unoffcial CPF Calulator Result</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/cpfcal.css') }}">
     <body>
-      Hello {{ name }}, based on your monthly salary $ {{ salary }} (capped at $6000) and age {{ age }}: <br>
-      Your monthly CPF contribution by Employer is $ {{ emp }} . <br>
-      Your monthly CPF contribution by Yourself is $ {{ eme }} . <br>
-      Your total monthly CPF contribution is $ {{ tot }} . <br>
+      Hello {{ name }}, <br>
+      Based on your monthly salary $ {{ salary }} (capped at $6000) and age {{ age }}: <br>
+      Your monthly CPF contribution by Employer is $ {{ emp }}  <br>
+      Your monthly CPF contribution by Yourself is $ {{ eme }}  <br>
+      Your total monthly CPF contribution is $ {{ tot }}  <br>
       Here is your CPF contribution monthly breakdown: <br>
-      CPF OA is $ {{ oa }} . <br>
-      CPF SA is $ {{ sa }} . <br>
-      CPF MA is $ {{ ma }} . <br>
+      CPF OA is $ {{ oa }}  <br>
+      CPF SA is $ {{ sa }}  <br>
+      CPF MA is $ {{ ma }}  <br>
     </body>
   </head>
 </html>

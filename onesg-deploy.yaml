@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: onesg
-        image: asia-southeast1-docker.pkg.dev/onesg-111999/onesg/python
+        image: gcr.io/onesg-111999/github.com/billrain/onesg/green@sha256:d8cc48d8c34af52752a349f617f66e761c066e06eb4f4f121efd61cf0c21f1a0
         ports:
-        - containerPort: 8888
+        - containerPort: 5000
