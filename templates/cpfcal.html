@@ -6,7 +6,6 @@
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <title>Unoffcial CPF Calulator</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/cpfcal.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
     <form action="/result" method="post">
@@ -23,6 +22,10 @@
             <div class="input">
                 <input name="salary"  type="number" class="input_field" required />
                 <label class="input_label">Your monthly salary $SGD</label>
+            </div>
+            <div class="input">
+                <input name="bonus"   type="number" class="input_field" />
+                <label class="input_label">Your yearly bonus $SGD</label>
             </div>
             <div class="input">
                 <input name="age" type="number" class="input_field" required />

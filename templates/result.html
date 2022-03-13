@@ -9,7 +9,6 @@
     <title>CPF Monthly Contribution</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/nicepage.css') }}">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/Home.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <!--    <link rel="stylesheet" href="nicepage.css" media="screen"> 
 <link rel="stylesheet" href="Home.css" media="screen"> 
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -61,6 +60,11 @@
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h3 class="u-align-left u-custom-font u-font-open-sans u-text u-text-default u-text-1"> Hello {{ name }},&nbsp;<br>
           <br>Based on your monthly salary $ {{ salary }} (capped at $6000) and age {{ age }}:&nbsp;<br> Your monthly CPF contribution by Employer is $ {{ emp }}&nbsp;<br> Your monthly CPF contribution by Yourself is $ {{ eme }}&nbsp;<br> Your total monthly CPF contribution is $ {{ tot }}&nbsp;<br>
+          <br>CPF annual limit is $6000 * 17 * 0.37 = $37740
+          <br>Your annual CPF contribution by Employer is $ {{ yr_emp }}&nbsp;
+          <br>Your annual CPF contribution by Yourself is $ {{ yr_eme }}&nbsp;
+          <br>Your annual total CPF contribution is $ {{ yr_tot }}&nbsp;
+          <br>
           <br>Here is your CPF contribution monthly breakdown:&nbsp;
         </h3>
       </div>

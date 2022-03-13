@@ -14,6 +14,7 @@ def cpfcal():
     salary=request.form.get("salary", type=float)
     if not salary:
         return render_template("error.html", message="Missing salary")
+    bonus=request.form.get("bonus", type=float)
     age=request.form.get("age", type=int)
     if not age:
         return render_template("error.html", message="Invalid age")
@@ -74,11 +75,34 @@ def cpfcal():
     cpf_self = salary * r_self
     cpf_tot  = cpf_emp + cpf_self
 
+# compute yearly CPF con
+    year_cpf_emp  = cpf_emp * 12 + bonus * r_emp 
+    year_cpf_self = cpf_self * 12 + bonus * r_self
+    year_tot = year_cpf_emp + year_cpf_self
+
+    if year_cpf_emp <= 17340:
+        year_cpf_emp = year_cpf_emp
+    else:
+        year_cpf_emp = 17340
+
+    if year_cpf_self <= 17340:
+        year_cpf_self = year_cpf_self
+    else:
+        year_cpf_self = 20400
+
+    if year_tot <= 37740:
+        year_tot = year_tot
+    else:
+        year_tot = 37740
+
     emp = ("{:.2f}".format(cpf_emp))
     eme = ("{:.2f}".format(cpf_self))
     tot = ("{:.2f}".format(cpf_tot))
     oa = ("{:.2f}".format(cpf_oa))
     sa = ("{:.2f}".format(cpf_sa))
     ma = ("{:.2f}".format(cpf_ma))
+    yr_emp = ("{:.2f}".format(year_cpf_emp))
+    yr_eme = ("{:.2f}".format(year_cpf_self))
+    yr_tot = ("{:.2f}".format(year_tot))
 
-    return render_template("result.html", name=name, salary=salary, age=age, emp=emp, eme=eme, tot=tot, oa=oa, ma=ma, sa=sa)
+    return render_template("result.html", name=name, salary=salary, age=age, emp=emp, eme=eme, tot=tot, oa=oa, ma=ma, sa=sa, yr_emp=yr_emp, yr_eme=yr_eme, yr_tot=yr_tot)
