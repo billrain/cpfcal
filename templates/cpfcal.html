@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <title>Unoffcial CPF Calulator</title>
+    <title>非官方CPF计算器</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/cpfcal.css') }}">
   </head>
   <body>
@@ -12,27 +12,27 @@
 
 <div class="container">
     <div class="card">
-        <h1 class="card_title">Calulate your monthly CPF contribution</h1>
+        <h1 class="card_title">慢走的CPF计算器</h1>
         <p class="card_title-info">CSS by Anna Batura</p>
         <form class="card_form">
             <div class="input">
                 <input autocomplete="off" type="text" name="name" class="input_field" required />
-                <label class="input_label">Nickname</label>
+                <label class="input_label">昵称</label>
             </div>
             <div class="input">
                 <input name="salary"  type="number" class="input_field" required />
-                <label class="input_label">Your monthly salary $SGD</label>
+                <label class="input_label">请输入月薪$SGD</label>
             </div>
             <div class="input">
                 <input name="bonus"   type="number" class="input_field" />
-                <label class="input_label">Your yearly bonus $SGD</label>
+                <label class="input_label">请输入全年奖金$SGD</label>
             </div>
             <div class="input">
                 <input name="age" type="number" class="input_field" required />
-                <label class="input_label">Your age</label>
+                <label class="input_label">请输入年龄</label>
 
             </div>
-            <button class="card_button">Get started</button>
+            <button class="card_button">点击计算</button>
         </form>
 <!---
         <div class="card_info">
