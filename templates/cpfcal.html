@@ -24,14 +24,22 @@
                 <label class="input_label">请输入月薪$SGD</label>
             </div>
             <div class="input">
-                <input name="bonus"   type="number" class="input_field" />
+                <input name="bonus"   type="number" class="input_field" required />
                 <label class="input_label">请输入全年奖金$SGD</label>
             </div>
             <div class="input">
                 <input name="age" type="number" class="input_field" required />
                 <label class="input_label">请输入年龄</label>
-
             </div>
+            <div class="input">
+<!---                <label class="input_label">请选择身份</label> -->
+                请选择身份<select name="status" type="text" class="input_field" required>
+                    {% for o in data %}
+                    <option value="{{ o.status }}">{{ o.status }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
             <button class="card_button">点击计算</button>
         </form>
 <!---

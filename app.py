@@ -4,28 +4,44 @@ app = Flask(__name__)
 
 @app.route("/",methods=["GET","POST"])
 def index():
-    return render_template("cpfcal.html")
+    return render_template("cpfcal.html",
+    data=[{'status': 'Citizen'}, {'status': 'PR_1st_year'}, {'status': 'PR_2nd_year'}])
 
 @app.route("/result", methods=["POST"])
 def cpfcal():
     name=request.form.get("name")
     if not name:
         return render_template("error.html", message="Missing name")
+
     salary=request.form.get("salary", type=float)
     if not salary:
         return render_template("error.html", message="Missing salary")
+
     bonus=request.form.get("bonus", type=float)
+
     age=request.form.get("age", type=int)
     if not age:
         return render_template("error.html", message="Invalid age")
+
+    status=request.form.get("status")
+    if not status:
+        return render_template("error.html", message="Invalid status")
 
     if salary <= 6000:
         salary = salary
     else:
         salary = 6000
 
-    r_emp  = 0.17
-    r_self = 0.20
+# added for 1st and 2nd year PR
+    if status == 'PR_1st_year':
+        r_emp  = 0.04
+        r_self = 0.05
+    elif status == 'PR_2nd_year':
+        r_emp  = 0.09
+        r_self = 0.15        
+    else:
+        r_emp  = 0.17
+        r_self = 0.20
 
     if age <= 35:
         cpf_oa  = salary * 0.23
@@ -105,4 +121,4 @@ def cpfcal():
     yr_eme = ("{:.2f}".format(year_cpf_self))
     yr_tot = ("{:.2f}".format(year_tot))
 
-    return render_template("result.html", name=name, salary=salary, age=age, emp=emp, eme=eme, tot=tot, oa=oa, ma=ma, sa=sa, yr_emp=yr_emp, yr_eme=yr_eme, yr_tot=yr_tot)
+    return render_template("result.html", name=name, salary=salary, age=age, status=status, emp=emp, eme=eme, tot=tot, oa=oa, ma=ma, sa=sa, yr_emp=yr_emp, yr_eme=yr_eme, yr_tot=yr_tot)
