@@ -121,4 +121,4 @@ def cpfcal():
     yr_eme = ("{:.2f}".format(year_cpf_self))
     yr_tot = ("{:.2f}".format(year_tot))
 
-    return render_template("result.html", name=name, salary=salary, age=age, status=status, emp=emp, eme=eme, tot=tot, oa=oa, ma=ma, sa=sa, yr_emp=yr_emp, yr_eme=yr_eme, yr_tot=yr_tot)
+    return render_template("result.html", name=name, salary=salary, bonus=bonus, age=age, status=status, emp=emp, eme=eme, tot=tot, oa=oa, ma=ma, sa=sa, yr_emp=yr_emp, yr_eme=yr_eme, yr_tot=yr_tot)
