@@ -27,10 +27,10 @@ def cpfcal():
     if not status:
         return render_template("error.html", message="Invalid status")
 
-    if salary <= 6000:
+    if salary <= 7400:
         salary = salary
     else:
-        salary = 6000
+        salary = 7400
 
 # added for 1st and 2nd year PR
     if status == 'PR_1st_year':
